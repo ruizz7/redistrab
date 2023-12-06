@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    Sistema de Atendimento
+
+    <script>
+        function proximo() {
+            window.location.href = "/proximo";
+        }
+
+        function retirarSenha() {
+            window.location.href = "/retirar";
+        }
+
+    </script>
+
+</head>
+
+<body style="font-family: Arial, Helvetica, sans-serif;">
+    <div style="display: flex; flex-direction: column; height: 300px; margin: auto;">
+        <div style="flex: 10;font-size: 100px;width: 200px; text-align: center; margin: auto;">
+            <p style="font-size: 20px;">Senha atual:</p>
+            <%= senha_atual %>
+        </div>
+        <div style="flex: 1; padding: 15px;">
+            Próximas senhas: <%= (fila_senhas==null ? "" : fila_senhas) %>
+        </div>
+        <div style="border: solid 1px; flex: 1;">
+            <div style="display: flex; background-color: darkgrey; padding: 10px;">
+
+                <div style="flex: 1; text-align: center;">
+                    Atendente
+                </div>
+                <div style="flex: 1; text-align: center;">
+                    Cliente
+                </div>
+
+            </div>
+        </div>
+        <div style="flex: 1;">
+            <div style="display: flex; width: 100%;padding: 10px;">
+
+                <div style="flex: 1; text-align: center;">
+                    <button style="padding-top: 5px;padding-bottom: 5px;" onclick="proximo()">Próxima senha</button>
+                </div>
+                <div style="flex: 1;text-align: center;">
+                    <button style="padding-top: 5px;padding-bottom: 5px;" onclick="retirarSenha()">Retirar senha</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
